@@ -20,12 +20,11 @@ It is designed to speed up early-stage reconnaissance by combining:
   - `whatweb` for HTTP/HTTPS services
   - `dig` for DNS services
   - `nxc smb` for SMB targets
-- Basic Active Directory likelihood analysis
+- Basic detection of AD-related ports
 - Multiple output formats:
   - `json`
   - `plain`
   - `both`
-- Clean interruption handling with `Ctrl+C`
 
 ## How it works
 
