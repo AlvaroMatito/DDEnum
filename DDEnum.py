@@ -334,12 +334,20 @@ def main() -> None:
         default="json",
         help="Formato de salida a fichero: json, plain o both"
     )
+    parser.add_argument(
+        "--all-ports",
+        action="store_true",
+        help="Escanea todos los puertos TCP del 1 al 65535"
+    )
 
     args = parser.parse_args()
 
     try:
         ip = resolve_target(args.target)
-        ports = parse_ports(args.ports)
+        if args.all_ports:
+            ports = list(range(1, 65536))
+        else:
+            ports = parse_ports(args.ports)
 
         console.print(f"[cyan]Objetivo:[/cyan] {args.target} -> {ip}")
         console.print(f"[cyan]Escaneando {len(ports)} puertos con {args.threads} hilos...[/cyan]")
@@ -397,7 +405,7 @@ def main() -> None:
             )
 
     except KeyboardInterrupt:
-        console.print("[bold yellow]Saliendo limpiamente...[/bold yellow]")
+        console.print("[bold yellow]Saliendo...[/bold yellow]")
         sys.exit(130)
     except ValueError as exc:
         console.print(f"[red]{exc}[/red]")
