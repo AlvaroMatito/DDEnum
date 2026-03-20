@@ -1,6 +1,6 @@
-# EnumForge
+# DDEnum
 
-EnumForge is a Python-based enumeration tool that performs TCP port scanning and launches context-aware enumeration modules based on the detected services.
+DDEnum is a Python-based enumeration tool that performs TCP port scanning and launches context-aware enumeration modules based on the detected services.
 
 It is designed to speed up early-stage reconnaissance by combining:
 - port discovery
@@ -29,7 +29,7 @@ It is designed to speed up early-stage reconnaissance by combining:
 
 ## How it works
 
-EnumForge follows a simple workflow:
+DDEnum follows a simple workflow:
 
 1. Resolve the target IP or hostname
 2. Scan TCP ports
@@ -46,12 +46,12 @@ EnumForge follows a simple workflow:
   - `dig`
   - `nxc`
 
-If one of these tools is not installed, EnumForge will continue running and report that the dependency was not found.
+If one of these tools is not installed, DDEnum will continue running and report that the dependency was not found.
 
 ## Installation
 
 Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/enumforge.git
-cd enumforge
+git clone https://github.com/AlvaroMatito/DDEnum
+cd DDEnum
